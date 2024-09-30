@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/bootstrap.css">
+    <script src="../lib/bootstrap.js"></script>
+
+    <!-- Nhúng Font Icon -->
+    <script src="../lib/font-fontawesome-ae333ffef2.js"></script>
+
+    <!-- Nhúng AngularJS -->
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-route.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="mycontroller1">
+   <h2>Đỏ : {{red}}</h2>
+   <h2>Xanh : {{blue}}</h2>
+    </div>
+    <div ng-controller="mycontroller2">
+        <h2>Đỏ : {{red}}</h2>
+        <h2>Xanh : {{blue}}</h2>
+    </div>
+    <p>Root:{{root}} </p>
+    <div ng-controller="mycontrollercha">
+   <p>Cha: {{ctrlcha}}</p>
+   <p>Con: {{ctrlcon}}</p>
+        <div ng-controller="mycontrollercon">
+        <p>Cha: {{ctrlcha}}</p>
+        <p>Root:{{root}} </p>
+        <p>Con: {{ctrlcon}}</p>
+        <p>$parent: {{$parent.ctrlcha}}</p>
+        </div>
+    </div>
+
+   <div ng-controller="myctrl">
+
+    <table border="1", class="table">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Pass</td>
+                <td>Role</td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="k in user">
+                <td>{{k.id}}</td>
+                <td>{{k.pass}}</td>
+                <td>{{k.role}}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+   </div>
+    
+
+
+    <script src="index.js"></script>
+</body>
+</html>
